@@ -1,0 +1,19 @@
+{
+  "name": "addressbook",
+  "version": "1.0.0",
+  "description": "Address Book using JS",
+  "main": "AddressBook.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pragati215/Address_Book_Using_JScript.git"
+  },
+  "author": "\"Pragati\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pragati215/Address_Book_Using_JScript/issues"
+  },
+  "homepage": "https://github.com/Pragati215/Address_Book_Using_JScript#readme"
+}
