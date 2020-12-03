@@ -136,6 +136,16 @@ try {
     AddressBookArray.splice(index, 3);
     console.log("contacts after being deleted");
     AddressBookArray.forEach((contact) => console.log(contact.toString()));
+
+    // find total number of contacts
+    var totalContacts = 0;
+    function findtotalContacts(AddressBookArray) {
+        if (AddressBookArray != null)
+            totalContacts++;
+        return totalContacts;
+    }
+    AddressBookArray.reduce(findtotalContacts, 1);
+    console.log("Total number of contacts in AddressBook  : " + totalContacts);
 }
 catch (e) {
     console.log(e);
