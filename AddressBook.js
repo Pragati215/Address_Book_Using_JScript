@@ -120,6 +120,9 @@ try {
 
     AddressBookArray.push(new AddressBook("Soham", "Deshmukh", "navipeth", "Banglore", "Karnataka", "411007",
         "7090355988", "sohamdeshmukh@gmail.com"));
+    
+        AddressBookArray.push(new AddressBook("Soham", "Deshmukh", "navipeth", "Banglore", "Karnataka", "411007",
+        "7090355988", "sohamdeshmukh@gmail.com"));
     AddressBookArray.forEach((contact) => console.log(contact.toString()));
 
     //finding Contact using name
@@ -146,6 +149,20 @@ try {
     }
     AddressBookArray.reduce(findtotalContacts, 1);
     console.log("Total number of contacts in AddressBook  : " + totalContacts);
+
+    // check for duplicate Contact
+    let duplicateCount = 0;
+    function CheckDuplicates(contact) {
+        if (contact.firstName == "Soham")
+            duplicateCount++;
+        return duplicateCount;
+    }
+    // checking the count for each contact
+    AddressBookArray.forEach((contact) => CheckDuplicates(contact));
+    if (duplicateCount == 1)
+        console.log("Not a Duplicate entry");
+    else
+        console.log("Duplicate entry");
 }
 catch (e) {
     console.log(e);
