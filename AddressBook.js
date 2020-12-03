@@ -112,14 +112,23 @@ try {
     AddressBookArray.push(new AddressBook("Neha", "Patil", "modikhana", "Nagpur", "Maharashtra", "412002",
         "7790368980", "nehapatil@gmail.com"));
 
-    AddressBookArray.push(new AddressBook("Phreya", "Mule", "dawatChouk", "Pune", "Maharashtra", "414007",
+    AddressBookArray.push(new AddressBook("Shreya", "Mule", "dawatChouk", "Pune", "Maharashtra", "414007",
         "9088373499", "muleshreya@gmail.com"));
 
     AddressBookArray.push(new AddressBook("Payal", "Giri", "Kothrud", "Pune", "Maharashtra", "413007",
         "8878368999", "payalgiri@gmail.com"));
 
-    AddressBookArray.push(new AddressBook("Soham", "deshmukh", "navipeth", "Banglore", "Karnataka", "411007",
+    AddressBookArray.push(new AddressBook("Soham", "Deshmukh", "navipeth", "Banglore", "Karnataka", "411007",
         "7090355988", "sohamdeshmukh@gmail.com"));
+    AddressBookArray.forEach((contact) => console.log(contact.toString()));
+
+    //finding Contact using name
+    let check = AddressBookArray.findIndex(contact => contact.firstName == "Neha");
+    //updating the contact detail
+    AddressBookArray[check].zip = "412005";
+
+    //display updated contacts   
+    console.log(" updated Contact Details");
     AddressBookArray.forEach((contact) => console.log(contact.toString()));
 }
 catch (e) {
