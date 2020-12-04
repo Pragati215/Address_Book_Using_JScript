@@ -173,7 +173,7 @@ try {
         if (contact.city == "Pune") {
             console.log(contact.toString());
             numOfCity++;
-        } 
+        }
     }
     AddressBookArray.filter(ContactByCity);
     console.log("\nPersons belongs to city " + numOfCity);
@@ -203,6 +203,13 @@ try {
     }
     let addressStateMap = AddressBookArray.map(StateMap);
     console.log(addressStateMap);
+
+    // sorting by name and printing the array
+    console.log("Sorting by firstName");
+    for (let contact in AddressBookArray) {
+        AddressBookArray.sort(contact.firstName);
+    }
+    AddressBookArray.forEach((contact) => console.log(contact.toString()));
 }
 catch (e) {
     console.log(e);
