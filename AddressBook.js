@@ -166,18 +166,28 @@ try {
 
     // Search Contact using city or state
     //Search by city
+    var numOfCity = 0;
+    var numOfState = 0;
     console.log("\nContact by City Pune")
     function ContactByCity(contact) {
-        if (contact.city == "Pune")
+        if (contact.city == "Pune") {
             console.log(contact.toString());
-
+            numOfCity++;
+        } 
     }
     AddressBookArray.filter(ContactByCity);
+    console.log("\nPersons belongs to city " + numOfCity);
 
-    //Search by state
-    console.log("\nContact By State Maharashtra")
-    let statecontact = AddressBookArray.filter((contact) => contact.state.includes("Maharashtra"));
-    console.log(statecontact.toString());
+    //by state
+    function ContactByState(contact) {
+        if (contact.state == "Maharashtra") {
+            console.log(contact.toString());
+            numOfState++;
+        }
+    }
+    console.log("\nContact By State ")
+    AddressBookArray.filter(ContactByState);
+    console.log("contacts belongs to state " + numOfState);
 
     //view Contacts by city or State using map  
     //by city
