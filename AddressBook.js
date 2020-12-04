@@ -95,7 +95,7 @@ class AddressBook {
 
     //defining to string method
     toString() {
-        return "First Name: " + this.firstName + ", Last Name: " + this.lastName
+        return "\nFirst Name: " + this.firstName + ", Last Name: " + this.lastName
             + "\nAddress: " + this.address
             + ", City: " + this.city + ", State: "
             + this.state + "\nZip: " + this.zip
@@ -120,8 +120,8 @@ try {
 
     AddressBookArray.push(new AddressBook("Soham", "Deshmukh", "navipeth", "Banglore", "Karnataka", "411007",
         "7090355988", "sohamdeshmukh@gmail.com"));
-    
-        AddressBookArray.push(new AddressBook("Soham", "Deshmukh", "navipeth", "Banglore", "Karnataka", "411007",
+
+    AddressBookArray.push(new AddressBook("Soham", "Deshmukh", "navipeth", "Banglore", "Karnataka", "411007",
         "7090355988", "sohamdeshmukh@gmail.com"));
     AddressBookArray.forEach((contact) => console.log(contact.toString()));
 
@@ -131,13 +131,13 @@ try {
     AddressBookArray[check].zip = "412005";
     AddressBookArray[check].lastName = "More";
     //display updated contacts   
-    console.log(" updated Contact Details");
+    console.log("\nupdated Contact Details");
     AddressBookArray.forEach((contact) => console.log(contact.toString()));
 
     // Delete an element from an array
     let index = AddressBookArray.findIndex(contact => contact.firstName == "Payal");
     AddressBookArray.splice(index, 3);
-    console.log("contacts after being deleted");
+    console.log("\ncontacts after being deleted");
     AddressBookArray.forEach((contact) => console.log(contact.toString()));
 
     // find total number of contacts
@@ -148,7 +148,7 @@ try {
         return totalContacts;
     }
     AddressBookArray.reduce(findtotalContacts, 1);
-    console.log("Total number of contacts in AddressBook  : " + totalContacts);
+    console.log("\nTotal number of contacts in AddressBook  : " + totalContacts);
 
     // check for duplicate Contact
     let duplicateCount = 0;
@@ -160,9 +160,24 @@ try {
     // checking the count for each contact
     AddressBookArray.forEach((contact) => CheckDuplicates(contact));
     if (duplicateCount == 1)
-        console.log("Not a Duplicate entry");
+        console.log("\nNot a Duplicate entry");
     else
-        console.log("Duplicate entry");
+        console.log("\nDuplicate entry");
+
+    // Search Contact using city or state
+    //Search by city
+    console.log("\nContact by City Pune")
+    function ContactByCity(contact) {
+        if (contact.city == "Pune")
+            console.log(contact.toString());
+
+    }
+    AddressBookArray.filter(ContactByCity);
+
+    //Search by state
+    console.log("\nContact By State Maharashtra")
+    let statecontact = AddressBookArray.filter((contact) => contact.state.includes("Maharashtra"));
+    console.log(statecontact.toString());
 }
 catch (e) {
     console.log(e);
